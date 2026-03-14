@@ -75,6 +75,9 @@ if _db_engine and _db_engine == "django.db.backends.postgresql":
             "PASSWORD": config("DB_PASSWORD", default=""),
             "HOST": config("DB_HOST", default="localhost"),
             "PORT": config("DB_PORT", default="5432"),
+            "OPTIONS": {
+                "sslmode": "require",
+            },
         }
     }
 else:
@@ -131,7 +134,9 @@ CORS_ALLOWED_ORIGINS = config(
 )
 
 # WebSockets
-if DEBUG:
+REDIS_URL = config("REDIS_URL", "")
+
+if REDIS_URL:
     CHANNEL_LAYERS = {
         "default": {
             "BACKEND": "channels.layers.InMemoryChannelLayer",
@@ -142,12 +147,7 @@ else:
         "default": {
             "BACKEND": "channels_redis.core.RedisChannelLayer",
             "CONFIG": {
-                "hosts": [
-                    (
-                        config("REDIS_HOST", default="127.0.0.1"),
-                        config("REDIS_PORT", default=6379, cast=int),
-                    )
-                ],
+                "hosts": [REDIS_URL],
             },
         },
     }
