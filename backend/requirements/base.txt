@@ -1,0 +1,15 @@
+# Core
+Django>=5.0
+djangorestframework>=3.14
+django-cors-headers>=4.3
+python-decouple>=3.8
+
+# Authentication
+djangorestframework-simplejwt>=5.3
+
+# WebSockets
+channels>=4.0
+daphne>=4.0
+
+# Database
+psycopg2-binary>=2.9

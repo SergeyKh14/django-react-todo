@@ -1,0 +1,3 @@
+-r base.txt
+
+# Add production-only packages here (e.g. gunicorn, whitenoise)

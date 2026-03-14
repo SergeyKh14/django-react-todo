@@ -1,0 +1,4 @@
+# Install with: pip install -r requirements.txt
+# For development (includes linting): pip install -r requirements/development.txt
+# For production: pip install -r requirements/production.txt
+-r requirements/base.txt

@@ -1,0 +1,30 @@
+{
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "files.eol": "\n",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "python.defaultInterpreterPath": "${workspaceFolder}/backend/venv/bin/python",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/backend/venv/lib/python3.13/site-packages"
+  ],
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
+  "black-formatter.args": ["--line-length", "119"],
+  "flake8.enabled": true,
+  "flake8.args": ["--max-line-length=119"],
+  "pylint.args": [
+    "--load-plugins=pylint_django",
+    "--django-settings-module=core.settings"
+  ],
+  "isort.check": true,
+  "isort.args": ["--profile", "black", "--line-length", "119"],
+  "cursorpyright.analysis.extraPaths": [
+    "${workspaceFolder}/backend/venv/lib/python3.13/site-packages"
+  ]
+}

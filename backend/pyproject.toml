@@ -1,0 +1,28 @@
+[tool.black]
+line-length = 119
+target-version = ["py313"]
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  \.git
+  | \.venv
+  | venv
+  | migrations
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 119
+skip = ["venv", ".venv", "migrations"]
+known_first_party = ["core", "users", "todos"]
+
+[tool.pylint.main]
+load-plugins = ["pylint_django"]
+django-settings-module = "core.settings"
+
+[tool.pylint.messages_control]
+disable = ["missing-module-docstring", "missing-class-docstring", "too-many-ancestors"]
+
+[tool.pylint.format]
+max-line-length = 119

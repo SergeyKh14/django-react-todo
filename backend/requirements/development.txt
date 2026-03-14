@@ -1,0 +1,10 @@
+-r base.txt
+
+# Linting & Formatting
+flake8>=7.0
+black>=24.0
+isort>=5.13
+flake8-isort>=6.0
+pylint-django>=2.5
+django-stubs>=5.0
+djangorestframework-stubs>=3.15
