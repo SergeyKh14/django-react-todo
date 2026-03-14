@@ -2,6 +2,8 @@
 
 A full-stack task manager with boards, real-time updates over WebSockets, and JWT authentication.
 
+**Live demo:** [https://django-react-todo.vercel.app/](https://django-react-todo.vercel.app/)
+
 ---
 
 ## Project structure
