@@ -7,13 +7,13 @@ exposed as ``application``.
 
 import os
 
-from channels.routing import ProtocolTypeRouter, URLRouter
-from django.core.asgi import get_asgi_application
-
-from core.middleware import JWTWebsocketAuthMiddleware
-from core.routing import websocket_urlpatterns
-
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "core.settings")
+
+from channels.routing import ProtocolTypeRouter, URLRouter  # noqa: E402
+from django.core.asgi import get_asgi_application  # noqa: E402
+
+from core.middleware import JWTWebsocketAuthMiddleware  # noqa: E402
+from core.routing import websocket_urlpatterns  # noqa: E402
 
 # Django ASGI application for HTTP
 django_asgi_app = get_asgi_application()
