@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: django-react-todo-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements/production.txt
+    startCommand: daphne -b 0.0.0.0 -p $PORT core.asgi:application
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.0
